@@ -1,0 +1,132 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.practice-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.practice-menu {
+  background: #ffcc00; /* Brighter background color for the menu */
+  padding: 15px;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.practice-menu ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.practice-menu li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.practice-menu button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ffcc00;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+.practice-menu button:hover {
+  background-color: #ff9900; /* Brighter hover effect */
+  color: white;
+}
+
+.practice-menu button.active {
+  background-color: #ff6600; /* Different color for clicked item */
+  color: white;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffcc00;
+  box-shadow: 0 4px 2px -2px gray;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.submenu.visible {
+  display: block;
+}
+
+.submenu li {
+  margin: 0;
+  padding: 0;
+}
+
+.submenu button {
+  width: 100%;
+  padding: 10px 20px;
+  color: #fff;
+  text-align: left;
+  background-color: #ffcc00;
+  border: none;
+  cursor: pointer;
+}
+
+.submenu button:hover {
+  background-color: #ff9900; /* Brighter hover effect */
+  color: white;
+}
+
+.submenu button span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.practice-content {
+  margin-top: 20px;
+  flex-grow: 1;
+  width: 100%;
+  height: calc(100% - 60px); /* Adjust height to account for the menu */
+  overflow: hidden;
+}
+
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.loading-animation p {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #3498db;
+}
